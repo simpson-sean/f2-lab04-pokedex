@@ -7,13 +7,12 @@ export default class PokeItems extends Component {
     render() {
         return (
             <div>
-                hey
                 <div className='poke-list'>
                     
                     <p>
-                        hey
-                        Name: {this.props.name}
+                        Name: {this.props.pokemon.pokemon}
                     </p>
+                    <img src={this.props.pokemon.url_image} alt='pokemonImage' width='200px' height='200px' />
                     
                 </div> 
             </div>
