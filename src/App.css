@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  justify-items: center;
 }
 
 .App-logo {
@@ -35,4 +36,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.poke-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #61dafb;
+  padding: 10px;
+  border-radius: 10px 40px 10px 40px;
+
+  
 }

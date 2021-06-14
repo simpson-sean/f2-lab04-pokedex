@@ -80,7 +80,7 @@ render() {
   let pokemonsToDisplay = this.state.searchResults.length > 0 ? this.state.searchResults : this.state.pokemon
   
   return (
-    <div className="App">
+    <div className="App-header">
       
       <PokeSearch name="Search" handleChange={this.handleChange} handleClick={this.handleClick} search={this.handleSearch} />
       <PokeList pokeDex={pokemonsToDisplay} handleSort={this.handleSort} />
