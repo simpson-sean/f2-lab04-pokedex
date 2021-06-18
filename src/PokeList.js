@@ -12,7 +12,7 @@ state = {
     
     pokemon: [],
     query: '',
-    sort: '',
+    direction: 'asc',
   
   }
   
@@ -30,41 +30,21 @@ state = {
   
   }
   
-  handleSearch = async () => {
-    const searchQuery = `https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}`;
-    const searchResults = await request.get(searchQuery);
-    
-    
-    if (searchResults.body.results.length === 0 ) {
-      
-      window.alert('No Results Found.')
-    
-    } else {
-      this.setState({pokemon: searchResults.body.results});
-  
-    }
+  handleSearch = () => {
+    this.fetchData()    
+ 
   }
   
   // Sort ASC and DESC handler.
-  handleSort = (event) => {
-    
-    let sorted = [];
-  
-    if (event.target.value === 'ascending') {
-      sorted = this.state.pokemon.sort((a,b) => (a.pokemon > b.pokemon) ? 1 : ((b.pokemon > a.pokemon) ? -1 : 0));
-      
-    
-    } else if (event.target.value === 'descending') {
-      sorted = this.state.pokemon.sort((a,b) => (a.pokemon > b.pokemon) ? -1 : ((b.pokemon > a.pokemon) ? 1 : 0));
-    
-    }
-    
-    this.setState({searchResults: sorted})
-    
+  handleSort = async (event) => {
+    await this.setState({direction: event.target.value })
+    this.fetchData();
+    console.log(this.state.direction);
+
   }
   
   fetchData = async () => {
-    const pokeDex = await request.get('https://pokedex-alchemy.herokuapp.com/api/pokedex')
+    const pokeDex = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.direction}`)
     this.setState({pokemon: pokeDex.body.results});
     console.log(pokeDex);
   
@@ -79,9 +59,9 @@ state = {
                     <PokeSearch name="Search" handleChange={this.handleChange} handleClick={this.handleClick} search={this.handleSearch} />
                     
                         <select onChange={this.handleSort}>
-                            <option value='default'>Sort List</option>
-                            <option value='ascending'>Sort Ascending</option>
-                            <option value='descending'>Sort Descending</option>
+                            <option value=''>Sort List</option>
+                            <option value='asc'>Sort Ascending</option>
+                            <option value='desc'>Sort Descending</option>
                         
                         </select>
                     
