@@ -4,7 +4,6 @@ import './App.css';
 
 import Header from './Header.js';
 import Home from './Home.js';
-import PokeItem from './PokeItem.js';
 import PokeList from './PokeList';
 import PokeDetail from './PokemonDetail.js';
 //import PokeList from './PokeList.js';
