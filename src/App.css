@@ -24,6 +24,7 @@ body {
   width: 50%;
   display: inline-flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   font-family: 'Bangers', cursive  ;
   font-size: 15px;
