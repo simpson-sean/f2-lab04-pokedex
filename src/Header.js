@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import './Header.css';
 
 
 export default class Header extends Component {
     render() {
         return (
             <div className='header'>
-                
-                <div className='title'>
-                    Pokedex
+                <div className='poke-header'>Pokedex</div>
+                <div className='header-links'>
+                    <NavLink className='nav-links' exact to="/">Home</NavLink>
+                    <NavLink className='nav-links' exact to="/pokemon">Search</NavLink>
                 </div>
-            
-                <div className='links'>
-                    <NavLink to="/" exact className="nav-link">Home</NavLink>
-                    <NavLink to="/pokemon" exact className="nav-link">Search Index</NavLink>
-                </div>
-
             </div>
         )
     }

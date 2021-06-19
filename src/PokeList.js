@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import request from 'superagent';
-
 import PokeSearch from './PokeSearch.js';
 import PokeItem from './PokeItem.js';
 
@@ -54,7 +53,6 @@ state = {
     render() {
 
         return (
-            <div>
                 <div>
                     <PokeSearch name="Search" handleChange={this.handleChange} handleClick={this.handleClick} search={this.handleSearch} />
                     
@@ -64,14 +62,14 @@ state = {
                             <option value='desc'>Sort Descending</option>
                         
                         </select>
-                    
+                    <section className='poke-grid'>
                     {this.state.pokemon.map(pokemon => {
                         return   <PokeItem pokemon={pokemon} key={pokemon.id} />
                         
                         })
                     }
+                    </section>
                 </div>
-            </div>
         )
     }
 }
