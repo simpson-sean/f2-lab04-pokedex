@@ -28,3 +28,7 @@
 .nav-links.active {
     color: violet;
 }
+
+.nav-links:hover {
+    color: yellow;
+}
