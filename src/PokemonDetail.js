@@ -14,11 +14,14 @@ export default class PokemonDetail extends Component {
     };
 
     fetchDetail = async () => {
-        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex/${this.props.match.params.pokeid}`);
+        this.setState({loading: true})
+        const apiId = this.props.match.params.pokeid;
+        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex/${apiId}`)
+        //console.log(data.body);
+        this.setState({pokeDetail: data.body});
+    };
 
-    }
-
-
+    
 
     render() {
         return (
@@ -28,5 +31,5 @@ export default class PokemonDetail extends Component {
                 <h3>{this.state.pokeDetail.pokemon}</h3>
             </div>
         )
-    }
-}
+    };
+};
