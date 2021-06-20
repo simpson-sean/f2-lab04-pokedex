@@ -6,7 +6,7 @@ export default function PokeSearch(props) {
 
     return (
         <div>
-            <input onChange={handleChange} />
+            <input placeholder="search..." onChange={handleChange} />
             <button onClick={search}>{props.name}</button>
         </div>
     )

@@ -8,8 +8,8 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div>
-                home page!
+            <div className="splash-page">
+                Welcome to PokeDex.
             </div>
         )
     }

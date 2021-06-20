@@ -55,7 +55,8 @@ state = {
 
         return (
                 <div>
-                    <PokeSearch name="Search" handleChange={this.handleChange} handleClick={this.handleClick} search={this.handleSearch} />
+                  <section className="poke-search">
+                    <PokeSearch name="search" handleChange={this.handleChange} handleClick={this.handleClick} search={this.handleSearch} />
                     
                         <select onChange={this.handleSort}>
                             <option value=''>Sort List</option>
@@ -63,6 +64,7 @@ state = {
                             <option value='desc'>Sort Descending</option>
                         
                         </select>
+                    </section>
                     <section className='poke-grid'>
                     {this.state.pokemon.map((pokemon) => (
                         <Link to={`/pokemon/${pokemon._id}`}>

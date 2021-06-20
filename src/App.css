@@ -15,9 +15,14 @@ body {
   color: #61dafb;
 }
 
-.poke-controls {
-  display: flex;
-  flex-direction: row;
+.poke-search {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 30%;
+  margin-right: 40%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+
 }
 
 .poke-card {
@@ -25,13 +30,15 @@ body {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
   font-family: 'Bangers', cursive  ;
   font-size: 15px;
+  white-space: nowrap;
   background-color: #61dafb;
   color:yellow;
   padding: 10px;
   border-radius: 5px 50px 5px 50px;
+  border: 1px double yellow;
+  margin: 5%;
   
 }
 
@@ -41,6 +48,18 @@ body {
   flex-wrap: wrap;
   justify-content: space-evenly;
   
+}
+
+.splash-page {
+  justify-content: center;
+  text-align: center;
+  color: aquamarine;
+  border: 1px solid yellow;
+  margin-top: 10%;
+  margin-left: 40%;
+  margin-right: 40%;
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px;
 }
 
 .active {
